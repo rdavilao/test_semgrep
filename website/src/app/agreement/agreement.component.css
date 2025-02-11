@@ -1,0 +1,12 @@
+.pb-50 {
+    padding-bottom: 50px !important;
+}
+
+.nav-link {
+    color: #172b4d !important;
+}
+
+.nav-link.active {
+    color: white !important;
+    background-color: #172b4d !important;
+}

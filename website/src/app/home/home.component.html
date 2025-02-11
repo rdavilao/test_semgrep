@@ -1,0 +1,322 @@
+<main>
+  <div class="position-relative">
+    <!-- Hero for FREE version -->
+    <section class="section section-lg section-hero section-shaped pb-300">
+      <!-- Background circles -->
+      <div class="shape shape-style-1 shape-default">
+        <span class="span-150"></span>
+        <span class="span-50"></span>
+        <span class="span-50"></span>
+        <span class="span-75"></span>
+        <span class="span-100"></span>
+        <span class="span-75"></span>
+        <span class="span-50"></span>
+        <span class="span-100"></span>
+        <span class="span-50"></span>
+        <span class="span-100"></span>
+      </div>
+      <div class="container pt-lg">
+        <div class="row row-grid align-items-center">
+          <div class="col-md-6 order-lg-2 ml-lg-auto">
+            <div class="position-relative pl-md-5">
+              <img
+                src="./assets/img/ill/ill-2.svg"
+                class="img-center img-fluid"
+              />
+            </div>
+          </div>
+          <div class="col-lg-6 order-lg-1">
+            <div class="d-flex px-3">
+              <div class="pl-4">
+                <h3 class="display-3 text-white">
+                  Te brindamos el apoyo necesario para iniciar tu negocio con
+                  éxito.
+                </h3>
+                <div class="btn-wrapper" style="padding-top: 2rem">
+                  <a
+                    (click)="navigateTo('/home', 'contact')"
+                    [routerLink]="['/home']"
+                    fragment="contact"
+                    class="btn btn-white btn-icon mb-3 mb-sm-0"
+                  >
+                    <span class="btn-inner--icon"
+                      ><i class="fa fa-envelope-o" aria-hidden="true"></i>
+                    </span>
+                    <span class="btn-inner--text">Contact Us</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section section-lg pt-lg-0 mt--200">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-12">
+            <div class="row row-grid">
+              <div class="col-lg-4">
+                <div class="card card-lift--hover shadow border-0">
+                  <div class="card-body py-5">
+                    <div
+                      class="icon icon-shape icon-shape-primary rounded-circle mb-4 text-white"
+                      style="background: #7b86ea !important"
+                    >
+                      <i class="ni ni-notification-70"></i>
+                    </div>
+                    <h6 class="text-default text-uppercase">Advertisement</h6>
+                    <p class="description mt-3" style="text-align: justify">
+                      Stay informed about our events, programs, and business
+                      opportunities.
+                      <br /><br /><br />
+                    </p>
+                    <a
+                      [routerLink]="['/advertisement']"
+                      class="btn btn-default mt-4"
+                      >View Ads</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="card card-lift--hover shadow border-0">
+                  <div class="card-body py-5">
+                    <div
+                      class="icon icon-shape icon-shape-success rounded-circle mb-4 text-white"
+                      style="background: #7b86ea !important"
+                    >
+                      <i class="fa fa-briefcase" aria-hidden="true"></i>
+                    </div>
+                    <h6 class="text-default text-uppercase">Jobs</h6>
+                    <p class="description mt-3" style="text-align: justify">
+                      Discover the latest job opportunities available through
+                      the Chamber of Commerce. <br /><br />
+                    </p>
+                    <a [routerLink]="['/jobs']" class="btn btn-default mt-4"
+                      >Explore Jobs</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="card card-lift--hover shadow border-0">
+                  <div class="card-body py-5">
+                    <div
+                      class="icon icon-shape icon-shape-warning rounded-circle mb-4 text-white"
+                      style="background: #7b86ea !important"
+                    >
+                      <i class="fa fa-handshake-o" aria-hidden="true"></i>
+                    </div>
+                    <h6 class="text-default text-uppercase">Agreements</h6>
+                    <p class="description mt-3" style="text-align: justify">
+                      Find detailed information about our latest partnership
+                      agreements and collaborations that benefit the business
+                      community.
+                    </p>
+                    <a
+                      [routerLink]="['/agreements']"
+                      class="btn btn-default mt-4"
+                      >View Agreements</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="row row-grid align-items-center">
+          <div class="col-md-6">
+            <div class="card bg-default shadow border-0">
+              <img src="./assets/img/perth1.webp" class="card-img-top" />
+              <blockquote class="card-blockquote">
+                <svg
+                  preserveAspectRatio="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 583 95"
+                  class="svg-bg"
+                >
+                  <polygon points="0,52 583,95 0,95" class="fill-default" />
+                  <polygon
+                    points="0,42 583,95 683,0 0,95"
+                    opacity=".2"
+                    class="fill-default"
+                  />
+                </svg>
+                <h5 class="display-3 font-weight-bold text-white">
+                  Discover Our Partnerships, Events, and Job Opportunities
+                </h5>
+              </blockquote>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="pl-md-5">
+              <h4 style="text-align: justify">
+                Stay connected with us to explore exclusive partnerships,
+                exciting events, and job opportunities tailored for our
+                community. Don’t miss out on valuable resources and chances to
+                grow professionally.
+                <br /><br />
+                <div class="btn-wrapper">
+                  <a
+                    (click)="navigateTo('/home', 'contact')"
+                    [routerLink]="['/home']"
+                    fragment="contact"
+                    class="btn btn-default btn-icon mb-3 mb-sm-0"
+                  >
+                    <span class="btn-inner--text">Join us today!</span>
+                  </a>
+                </div>
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section section-lg pt-0">
+      <div class="container">
+        <div class="card bg-gradient-default shadow-lg border-0">
+          <div class="p-5">
+            <div class="row align-items-center">
+              <div class="col-lg-8">
+                <h3 class="text-white">
+                  We make business growth easier for you.
+                </h3>
+                <p class="lead text-white mt-3">
+                  Join the Latino Chamber of Commerce in Perth and connect with
+                  a network that understands your culture, empowers your vision,
+                  and helps you achieve success.
+                </p>
+              </div>
+              <div class="col-lg-3 ml-lg-auto">
+                <a
+                  (click)="navigateTo('/home', 'contact')"
+                  [routerLink]="['/home']"
+                  fragment="contact"
+                  class="btn btn-lg btn-block btn-white"
+                  >Contact Us</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <section class="section section-lg bg-gradient-default">
+    <div class="container pb-300">
+      <div class="row text-center justify-content-center">
+        <div class="col-lg-10">
+          <h2 class="display-3 text-white">
+            Got Questions? We're Here to Help!
+          </h2>
+          <p class="lead text-white">
+            Do you have any questions or want to learn more? Don’t hesitate to
+            reach out! We’re happy to assist you and provide all the information
+            you need.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="separator separator-bottom separator-skew zindex-100">
+      <svg
+        x="0"
+        y="0"
+        viewBox="0 0 2560 100"
+        preserveAspectRatio="none"
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+      </svg>
+    </div>
+  </section>
+  <section class="section section-lg pt-lg-0 section-contact-us" id="contact">
+    <div class="container">
+      <div class="row justify-content-center mt--300">
+        <div class="col-lg-8">
+          <div class="card bg-gradient-secondary shadow">
+            <div class="card-body p-lg-5">
+              <h4 class="mb-1">Contact us today!</h4>
+              <div
+                class="form-group mt-5"
+                [ngClass]="{ focused: focus === true }"
+              >
+                <div class="input-group input-group-alternative">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"
+                      ><i class="ni ni-user-run"></i
+                    ></span>
+                  </div>
+                  <input
+                    class="form-control"
+                    placeholder="Your name"
+                    type="text"
+                    [(ngModel)]="nameInput"
+                    (focus)="focus = true"
+                    (blur)="focus = false"
+                  />
+                </div>
+              </div>
+              <div class="form-group" [ngClass]="{ focused: focus1 === true }">
+                <div class="input-group input-group-alternative">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"
+                      ><i class="ni ni-email-83"></i
+                    ></span>
+                  </div>
+                  <input
+                    class="form-control"
+                    placeholder="Email address"
+                    type="email"
+                    [(ngModel)]="emailInput"
+                    (focus)="focus1 = true"
+                    (blur)="focus1 = false"
+                  />
+                </div>
+              </div>
+              <div class="form-group mb-4">
+                <textarea
+                  class="form-control form-control-alternative"
+                  name="name"
+                  rows="4"
+                  cols="80"
+                  placeholder="Ask your question here..."
+                  [(ngModel)]="messageInput"
+                ></textarea>
+              </div>
+              <div>
+                <button
+                  type="button"
+                  class="btn btn-default btn-round btn-block btn-lg"
+                  [disabled]="!validateContactInfo()"
+                  [ngbTooltip]="
+                    !validateContactInfo()
+                      ? 'Please enter valid information'
+                      : ''
+                  "
+                  (click)="sendEmail()"
+                >
+                  Send Message
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div *ngIf="emailLoaderVisible" class="overlay">
+  <div class="row">
+    <!-- <img src="./assets/img/SellMyCarWa-blue.png" width="100%" />-->
+  </div>
+  <div class="row" style="margin-top: 1%">
+    <span class="loader"></span>
+  </div>
+</div>

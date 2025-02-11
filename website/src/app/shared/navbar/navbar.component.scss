@@ -1,0 +1,16 @@
+.point {
+  cursor: pointer;
+}
+
+.navbar-current-page {
+  border-bottom: 2px solid #FFFFFFF2;
+  padding-bottom: 5px;
+}
+
+
+@media (max-width: 768px) { 
+  .navbar-current-page {
+    border-bottom: 2px solid #172B4D;
+    padding-bottom: 5px;
+  }
+}

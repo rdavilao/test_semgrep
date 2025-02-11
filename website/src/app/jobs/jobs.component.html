@@ -1,0 +1,261 @@
+<main>
+  <div class="position-relative">
+    <section class="section">
+      <div class="container pt-lg">
+        <div class="row row-grid justify-content-center">
+          <div class="col-lg-8 text-center">
+            <h2 class="display-3 pb-50">Jobs Listing</h2>
+            <div class="filter-sort-container">
+              <div class="form-group" [ngClass]="{ focused: focus === true }">
+                <div class="input-group mb-4">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"
+                      ><i class="ni ni-zoom-split-in"></i
+                    ></span>
+                  </div>
+                  <input
+                    class="form-control"
+                    placeholder="Search"
+                    type="text"
+                    (focus)="focus = true"
+                    (blur)="focus = false"
+                    [(ngModel)]="searchInput"
+                    (ngModelChange)="searchInputOnChange($event)"
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 col-sm-12 filter-section">
+                  <div class="row row-sort-filter">
+                    <div class="nav nav-pills justify-content-center">
+                      <div
+                        ngbDropdown
+                        class="d-inline-block"
+                        style="margin-top: 10px"
+                      >
+                        <button
+                          type="button"
+                          class="btn btn-outline-default"
+                          id="dropdownBasic1"
+                          ngbDropdownToggle
+                        >
+                          <span *ngIf="!currentClassificationFilter"
+                            >Classification</span
+                          >
+                          <span *ngIf="currentClassificationFilter">{{
+                            currentClassificationFilter
+                          }}</span>
+                        </button>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                          <button
+                            ngbDropdownItem
+                            (click)="filterDataClassification('All')"
+                          >
+                            All
+                          </button>
+                          <button
+                            ngbDropdownItem
+                            *ngFor="let classification of jobsClassifications"
+                            (click)="filterDataClassification(classification)"
+                          >
+                            {{ classification }}
+                          </button>
+                        </div>
+                      </div>
+                      <div
+                        ngbDropdown
+                        class="d-inline-block"
+                        style="margin-top: 10px"
+                      >
+                        <button
+                          type="button"
+                          class="btn btn-outline-default"
+                          id="dropdownBasic1"
+                          ngbDropdownToggle
+                        >
+                          <span *ngIf="!currentTypeFilter">Type</span>
+                          <span *ngIf="currentTypeFilter">{{
+                            currentTypeFilter
+                          }}</span>
+                        </button>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                          <button
+                            ngbDropdownItem
+                            (click)="filterDataType('All')"
+                          >
+                            All
+                          </button>
+                          <button
+                            ngbDropdownItem
+                            (click)="filterDataType('Full Time')"
+                          >
+                            Full Time
+                          </button>
+                          <button
+                            ngbDropdownItem
+                            (click)="filterDataType('Half Time')"
+                          >
+                            Half Time
+                          </button>
+                          <button
+                            ngbDropdownItem
+                            (click)="filterDataType('Casual')"
+                          >
+                            Casual
+                          </button>
+                          <button
+                            ngbDropdownItem
+                            (click)="filterDataType('ABN')"
+                          >
+                            ABN
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container pt-sm">
+            <div class="col-lg-12">
+              <div
+                class="row row-grid"
+                style="display: flex; align-items: stretch"
+              >
+                <div class="col-lg-4 mt-5" *ngFor="let data of currentJobs">
+                  <div
+                    class="card card-lift--hover shadow border-0"
+                    style="height: 100%"
+                  >
+                    <div class="card-body py-5" style="height: 100%">
+                      <h6 class="text-primary">
+                        <a
+                          style="display: block; color: inherit"
+                          [routerLink]="[
+                            '/jobs/info/' + encryptData(data.id, data.title)
+                          ]"
+                          target="_blank"
+                        >
+                          <h6
+                            class="mt-3 google-maps-link"
+                            style="text-align: center"
+                          >
+                            <b>{{ data.title }}</b>
+                          </h6>
+                        </a>
+                      </h6>
+                      <hr />
+                      <div class="row google-maps-link">
+                        <a
+                          style="
+                            display: flex;
+                            text-decoration: none;
+                            color: inherit;
+                          "
+                          [routerLink]="[
+                            '/directory/info/' +
+                              encryptData(data.business.id, data.business.title)
+                          ]"
+                          target="_blank"
+                        >
+                          <div class="col-1">
+                            <i
+                              class="fa fa-building-o fa-lg mt-5px"
+                              aria-hidden="true"
+                            ></i>
+                          </div>
+                          <div class="col-10">
+                            {{ data.business.title }}
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        class="row"
+                        *ngIf="data.classification"
+                        style="margin-top: 30px"
+                      >
+                        <div class="col-1">
+                          <i
+                            class="fa fa-briefcase fa-lg mt-5px"
+                            aria-hidden="true"
+                          ></i>
+                        </div>
+                        <div class="col-10">
+                          {{ data.classification }}
+                        </div>
+                      </div>
+                      <div
+                        class="row"
+                        *ngIf="data.type"
+                        style="margin-top: 30px"
+                      >
+                        <div class="col-1">
+                          <i
+                            class="fa fa-clock-o fa-lg mt-5px"
+                            aria-hidden="true"
+                          ></i>
+                        </div>
+                        <div class="col-10">
+                          {{ data.type }}
+                        </div>
+                      </div>
+                      <div
+                        class="row"
+                        *ngIf="data.closingDate"
+                        style="margin-top: 30px"
+                      >
+                        <div class="col-1">
+                          <i
+                            class="fa fa-hourglass-end fa-lg mt-5px"
+                            aria-hidden="true"
+                          ></i>
+                        </div>
+                        <div class="col-10">
+                          {{ data.closingDate }}
+                        </div>
+                      </div>
+                      <div class="row" style="margin-top: 30px">
+                        <div class="col-1"></div>
+                        <div class="col-10">
+                          <b>Remote: </b>{{ data.remote ? "Yes" : "No" }}
+                        </div>
+                      </div>
+                      <div class="row" style="margin-top: 30px">
+                        <div class="col-12">
+                          <a
+                            [routerLink]="[
+                              '/jobs/info/' +
+                                encryptData(
+                                  data.business.id,
+                                  data.business.title
+                                )
+                            ]"
+                            target="_blank"
+                            class="btn btn-lg btn-default reminder"
+                            style="width: 100%"
+                            >More Info</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="row pt-sm"
+              *ngIf="this.currentJobs.length === 0"
+              style="display: block"
+            >
+              <div class="text-center">
+                <h4>No results found.</h4>
+                <h4>Please try again later.</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>

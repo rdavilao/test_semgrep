@@ -1,0 +1,98 @@
+<main>
+  <div class="position-relative">
+    <section class="section">
+      <div class="container pt-lg">
+        <h1>
+          <b>{{ eventInfo.title }}</b>
+        </h1>
+        <div class="row row-grid justify-content-center">
+          <div class="col-sm-7 col-md-8">
+            <div class="row">
+              <div class="col">
+                <h5>{{ eventInfo.description }}</h5>
+                <br />
+                <br />
+                <br />
+                <img
+                  [src]="
+                    eventInfo.img
+                      ? './assets/img/events/' + eventInfo.img
+                      : './assets/img/events/default.webp'
+                  "
+                  width="100%"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-5 col-md-4">
+            <div class="row">
+              <div class="col" style="display: flex; flex-direction: column">
+                <a
+                  *ngIf="validateDate(eventInfo.date)"
+                  (click)="setReminder(eventInfo)"
+                  class="btn btn-lg btn-default reminder"
+                  >Set a Reminder</a
+                >
+                <br />
+                <br />
+                <h2 class="display-3">Date</h2>
+                <h5>{{ formatDate(eventInfo.date) }}</h5>
+                <br />
+                <h2 class="display-3">Time</h2>
+                <h5>{{ formatTime(eventInfo.date) }}</h5>
+                <br />
+                <h2 class="display-3">Location</h2>
+                <h5>
+                  <div class="row google-maps-link">
+                    <a
+                      style="
+                        display: flex;
+                        text-decoration: none;
+                        color: inherit;
+                      "
+                      [href]="eventInfo.googleMapsLink"
+                      target="_blank"
+                    >
+                      <div class="col-1">
+                        <i
+                          class="fa fa-map-marker fa-lg mt-5px"
+                          aria-hidden="true"
+                        ></i>
+                      </div>
+                      <div class="col-11">{{ eventInfo.address }}</div>
+                    </a>
+                  </div>
+                </h5>
+                <br />
+                <h2 class="display-3" *ngIf="eventInfo.registerLink">
+                  Register Link
+                </h2>
+                <h5 *ngIf="eventInfo.registerLink">
+                  <div class="row google-maps-link">
+                    <a
+                      style="
+                        display: flex;
+                        text-decoration: none;
+                        color: inherit;
+                      "
+                      [href]="eventInfo.registerLink"
+                      target="_blank"
+                    >
+                      <div class="col-1">
+                        <i
+                          class="fa fa-check-square-o fa-lg mt-5px"
+                          aria-hidden="true"
+                        ></i>
+                      </div>
+                      <div class="col-11">{{ eventInfo.registerLink }}</div>
+                    </a>
+                  </div>
+                </h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
